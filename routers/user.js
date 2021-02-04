@@ -6,11 +6,7 @@ router.post('/user', (req, res) => {
     const user = new User(req.body)
 
     try {
-        user.save().then((req, res) => {
-            console.log(res);
-        }).catch(e => {
-            console.log(e);
-        })
+        user.save()
         res.status(201).send(user)
     } catch (e) {
         res.status(400).send(e)
