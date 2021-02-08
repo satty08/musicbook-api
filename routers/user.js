@@ -5,6 +5,8 @@ const router = new express.Router()
 router.post('/user', (req, res) => {
     const user = new User(req.body)
 
+    console.log(user);
+
     try {
         user.save()
         res.status(201).send(user)
